@@ -1,0 +1,10 @@
+{
+    "title": "Votre panier",
+    "lead": "Bonsoir, {name}. Voici ce qui se trouve actuellement dans votre panier.",
+    "updated": "Mise à jour du 21/10/2019",
+    "footer": "Ceci est une démonstration pour tester la bibliothèque Gaia i18n",
+    "Item": "Article",
+    "Quantity": "Quantité",
+    "Price": "Prix",
+    "Subtotal": "Total"
+}

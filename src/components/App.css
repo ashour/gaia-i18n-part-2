@@ -1,0 +1,34 @@
+.App {
+    color: #333;
+    padding: 0 1.25rem;
+}
+@media only screen and (min-width: 800px) {
+    .App {
+        width: 66.7%;
+        margin: 0 auto;
+    }
+}
+
+.App__Header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+}
+
+.App__Lead__Start,
+.App__Lead__End {
+    margin-top: 0;
+    font-weight: 200;
+}
+
+.App__Lead__End {
+    font-size: 0.75rem;
+}
+
+.App__Footer {
+    border-top: 1px solid #eee;
+    padding-top: 0.5em;
+    font-size: 0.875rem;
+    text-align: center;
+    color: #aaa;
+}

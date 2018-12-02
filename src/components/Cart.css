@@ -1,0 +1,14 @@
+.Cart {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.Cart th {
+    padding: 0.5rem;
+    border-bottom: 1px solid #999;
+}
+
+.Cart td {
+    padding: 0.5rem;
+    border-top: 1px solid #CCC;
+}
