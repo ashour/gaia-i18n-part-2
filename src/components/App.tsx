@@ -13,13 +13,14 @@ class App extends Component {
     }
 
     componentDidMount() {
-        const { supportedLocales, fallbackLocale } = i18nConfig;
+        const { supportedLocales } = i18nConfig;
+
+        this.setDirection(this.state.locale);
 
         gaia
             .init({
                 supportedLocales: Object.keys(supportedLocales),
-                locale: 'fr',
-                fallbackLocale
+                locale: this.state.locale,
             })
             .then((locale) => {
                 this.setState({ locale, isLocaleDetermined: true });
@@ -30,11 +31,7 @@ class App extends Component {
         this.setState({ isLocaleDetermined: false }, () => {
             gaia.setLocale(newLocale)
                 .then(() => {
-                    if (newLocale.indexOf('ar') === 0) {
-                        window.document.dir = 'rtl';
-                    } else {
-                        window.document.dir = 'ltr';
-                    }
+                    this.setDirection(newLocale);
 
                     return this.setState({
                         locale: newLocale,
@@ -42,6 +39,14 @@ class App extends Component {
                     });
                 });
         });
+    }
+
+    setDirection(locale: string) {
+        if (locale.indexOf('ar') === 0) {
+            window.document.dir = 'rtl';
+        } else {
+            window.document.dir = 'ltr';
+        }
     }
 
     renderHeader() {
@@ -62,9 +67,15 @@ class App extends Component {
             <div className="App__Header">
                 <p className="App__Lead__Start">
                     {t('lead', { name: 'Adam' })}
+                    {' '}
+                    ({t('item_count', { count: 7 })})
                 </p>
 
-                <p className="App__Lead__End">{t('updated')}</p>
+                <p className="App__Lead__End">
+                    {t('updated', {
+                        updatedAt: new Date('January 1 2019'),
+                    })}
+                </p>
             </div >
         );
     }

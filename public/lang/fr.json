@@ -1,7 +1,26 @@
 {
     "title": "Votre panier",
-    "lead": "Bonsoir, {name}. Voici ce qui se trouve actuellement dans votre panier.",
-    "updated": "Mise à jour du 21/10/2019",
+    "lead": "Bonsoir, {name}. Voici ce qui se trouve actuellement dans votre panier",
+    "item_count": {
+        "plural": {
+            "0": "Pas d'articles",
+            "1": "{count} article",
+            "2+": "{count} articles"
+        }
+    },
+    "updated": {
+        "format": "Mis à jour le {updatedAt:date}",
+        "updatedAt": {
+            "weekday": "short",
+            "year": "numeric",
+            "month": "long",
+            "day": "numeric"
+        }
+    },
+    "price": {
+        "format": "{price:currency}",
+        "price": "USD"
+    },
     "footer": "Ceci est une démonstration pour tester la bibliothèque Gaia i18n",
     "Item": "Article",
     "Quantity": "Quantité",

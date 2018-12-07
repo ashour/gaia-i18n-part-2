@@ -1,7 +1,28 @@
 {
     "title": "سلة التسوق الخاصة بك",
-    "lead": "مساء الخير يا آدم. إليك ما هو موجود حاليًا في سلة التسوق الخاصة بك.",
-    "updated": "تم تحديثه بتاريخ 21/10/2019",
+    "lead": "مساء الخير يا {name}. إليك ما هو موجود حاليًا في سلة التسوق الخاصة بك",
+    "item_count": {
+        "plural": {
+            "0": "لا يوجد قطع",
+            "1": "قطعة {count}",
+            "2": "قطعتان",
+            "3-10": "{count} قطع",
+            "11+": "{count} قطعة"
+        }
+    },
+    "updated": {
+        "format": "تم تحديثه يوم {updatedAt:date}",
+        "updatedAt": {
+            "weekday": "short",
+            "year": "numeric",
+            "month": "long",
+            "day": "numeric"
+        }
+    },
+    "price": {
+        "format": "{price:currency}",
+        "price": "USD"
+    },
     "footer": "هذا التطبيق اختبار لمكتبة Gaia i18n",
     "Item": "المنتج",
     "Quantity": "الكمية",

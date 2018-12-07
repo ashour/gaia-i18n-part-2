@@ -1,6 +1,25 @@
 {
     "title": "Your Cart",
-    "lead": "Evening, Adam. Here's what's currently in your shopping cart.",
-    "updated": "Updated 21/10/2019",
+    "lead": "Evening, {name}. Here's what's currently in your shopping cart",
+    "item_count": {
+        "plural": {
+            "0": "No items",
+            "1": "{count} item",
+            "2+": "{count} items"
+        }
+    },
+    "updated": {
+        "format": "Updated {updatedAt:date}",
+        "updatedAt": {
+            "weekday": "short",
+            "year": "numeric",
+            "month": "long",
+            "day": "numeric"
+        }
+    },
+    "price": {
+        "format": "{price:currency}",
+        "price": "USD"
+    },
     "footer": "This is a demo to test the Gaia i18n library"
 }

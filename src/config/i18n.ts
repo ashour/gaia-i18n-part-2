@@ -8,9 +8,9 @@ interface I18nConfig {
 
 const i18nConfig: I18nConfig = {
     supportedLocales: {
-        ar_EG: 'عربي',
-        fr: 'Français',
         en: 'English',
+        'ar-eg': 'عربي',
+        fr: 'Français',
     },
 
     fallbackLocale: 'fr',

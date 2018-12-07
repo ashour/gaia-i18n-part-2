@@ -1,8 +1,17 @@
+import {
+    interpolateSimple,
+    interpolatePlural,
+    interpolateFormatted,
+} from './lib/interpolate';
+import {
+    Translations,
+    FormattedTranslation,
+    PluralTranslation,
+    TranslationReplacements,
+} from './lib/types';
 import load from './lib/load';
 import resolveUserLocale from './lib/user-locale';
-import { interpolateSimple } from './lib/interpolate';
 import { normalize, containsNormalized } from './lib/util';
-import { Translations, TranslationReplacements } from './lib/types';
 
 let _locale: string;
 let _translations: Translations;
@@ -103,10 +112,28 @@ const gaia = {
         const translated = _translations[key] || key;
 
         if (replacements === undefined || Object.keys(replacements).length === 0) {
-            return translated;
+            return translated as string;
         }
 
-        return interpolateSimple(translated, replacements);
+        if (typeof translated === 'object') {
+            const keys = Object.keys(translated);
+
+            if (keys.indexOf('plural') !== -1) {
+                const definition = (translated as PluralTranslation).plural;
+
+                return interpolatePlural(definition, replacements) || key;
+            } else if (keys.indexOf('format') !== -1) {
+                return interpolateFormatted(
+                    translated as FormattedTranslation,
+                    replacements,
+                    _locale,
+                );
+            }
+        } else if (typeof translated === 'string') {
+            return interpolateSimple(translated, replacements);
+        }
+
+        return key;
     },
 };
 

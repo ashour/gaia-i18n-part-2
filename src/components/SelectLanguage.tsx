@@ -1,5 +1,6 @@
 import React from 'react';
 
+import gaia from '../gaia/gaia';
 import i18nConfig from '../config/i18n';
 
 function renderOption(value: string, label: string) {
@@ -18,7 +19,7 @@ function SelectLanguage(props: SelectLanuageProps) {
             onChange={e => props.onChange(e.target.value)}
         >
             {
-                Object.keys(i18nConfig.supportedLocales).map((key) => {
+                gaia.supportedLocales.map((key) => {
                     return renderOption(key, i18nConfig.supportedLocales[key]);
                 })
             }
