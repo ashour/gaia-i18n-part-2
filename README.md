@@ -1,3 +1,7 @@
+**⚠️ This repo is no longer maintained! Please visit https://github.com/PhraseApp-Blog/gaia-i18n-part-2 for the up-to-date repo.**
+
+---
+
 # gaia-i18n-part-2
 Gaia, a custom JavaScript i18n library for the browser, built for a companion
 PhraseApp blog article.
